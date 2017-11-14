@@ -13,17 +13,15 @@ import java.util.Scanner;
  */
 public class PointEntree {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    public void menuPrincipal() {
 
+        Quiz q1 = new Quiz();
         boolean quitter = false;
         while (quitter == false) {
 
             System.out.println("MENU PRINCIPAL");
             System.out.println("----------------");
-            System.out.println("1. Ajouter nouveau Quiz");
+            System.out.println("1. Creer  Quiz");
             System.out.println("2. Jouer au Quiz");
             System.out.println("3. Quitter");
             System.out.print("votre choix: ");
@@ -33,28 +31,31 @@ public class PointEntree {
             String select = scanner.nextLine();
             switch (select) {
                 case "1":
-                    ajouterNouveauQuiz();
+                    q1.saisieQuiz();
                     break;
                 case "2":
-                    jouerQuiz();
+                    q1.jouerQuiz();
                     break;
                 case "3":
                     quitter = true;
                     break;
                 default:
-                    System.out.println("Sélectionner à nouveau");
-
+                    System.out.println("Choix invalide, Sélectionner à nouveau !!!");
             }
 
         }
 
     }
 
-    private static void ajouterNouveauQuiz() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        PointEntree pe = new PointEntree();
+        
+        pe.menuPrincipal();
     }
 
-    private static void jouerQuiz() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }
