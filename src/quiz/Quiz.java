@@ -143,11 +143,10 @@ public class Quiz {
             int repNum = scanner.nextInt();
             questionActuelle.setNumReponseCorrecte(repNum);
             
-            if (questionActuelle.getNumReponseCorrecte(repNum) == ){
+            // Incrémente score si réponse correcte
+            if (questionActuelle.getNumReponseCorrecte() == repNum ){
                 score++;
             }
-
-            repondreQuestion(questionActuelle);
         }
 
         // Fin du quizz: affiche le score
@@ -157,12 +156,6 @@ public class Quiz {
     @Override
     public String toString() {
         return "Quiz{" + "titreQuiz=" + titreQuiz + ", questions=" + questions + '}';
-    }
-
-    //Répndre à une questionActuelle
-    public boolean repondreQuestion(Question question) {
-
-        return true;
     }
 
     /////get set/////
